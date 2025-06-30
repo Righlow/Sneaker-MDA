@@ -1,123 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Kickstart Sneakers</title>
 </head>
 <body>
-    <button id="dark-mode-toggle" class="dark-mode-btn">🌙 Darkmode</button>
-    <header class="header">
-        <h1 class="logo">Kickstart sneakers</h1>
-        <p>Your ultimate sneaker reseller destination </p>
-        <p>Explore the latest trends, exclusive realeses and timeless classics. Discover the perfect pair to elevate your style and step up your sneaker game.</p>
-    </header>
-    <div class="container">
-        <section class="auth-categories-section">
-            <div class="auth-section">
-                <div class="profile-picture">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=faces" alt="User Profile">
-                </div>
-                <button class="auth-button" id="auth-btn">Log In | Sign Up</button>
-            </div>
-
-            <nav class="categories">
-                <ul>
-                    <li onclick="filterProducts('new')">New Arrivals</li>
-                    <li onclick="filterProducts('trending')">Trending</li>
-                    <li onclick="filterProducts('brands')">Brands</li>
-                    <li onclick="filterProducts('limited')">Limited Editions</li>
-                    <li onclick="filterProducts('accessories')">Accessories</li>
-                </ul>
-            </nav>
-        </section>
-        <main class="content">
-            <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search for sneakers..."id="search-input">
-            </div>
-            <section class="sell-section">
-                <button class="sell-buton" onclick="alert('sell feature coming soon!')">Sell Now</button>"
-
-            </section>
-              <section class="listings-section">
-                <h2>Latest Arrivals</h2>
-                <div class="listings" id="product-listings">
-                    <div class="item" data-category="new trending">
-                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop" alt="Air Max 90">
-                        <h3>Air Max 90</h3>
-                        <p>Classic comfort meets modern style</p>
-                        <div class="price">$120</div>
-                        <button class="add-to-cart" onclick="addToCart('Air Max 90', 120)">Add to Cart</button>
-                    </div>
-                    <div class="item" data-category="trending brands">
-                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&fit=crop" alt="Jordan 1">
-                        <h3>Jordan 1 Retro</h3>
-                        <p>Iconic basketball heritage</p>
-                        <div class="price">$170</div>
-                        <button class="add-to-cart" onclick="addToCart('Jordan 1 Retro', 170)">Add to Cart</button>
-                    </div>
-                    <div class="item" data-category="limited new">
-                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&fit=crop" alt="Yeezy Boost">
-                        <h3>Yeezy Boost 350</h3>
-                        <p>Limited edition colorway</p>
-                        <div class="price">$220</div>
-                        <button class="add-to-cart" onclick="addToCart('Yeezy Boost 350', 220)">Add to Cart</button>
-                    </div>
-                    <div class="item" data-category="brands trending">
-                        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=300&h=200&fit=crop" alt="Stan Smith">
-                        <h3>Adidas Stan Smith</h3>
-                        <p>Timeless white leather classic</p>
-                        <div class="price">$85</div>
-                        <button class="add-to-cart" onclick="addToCart('Adidas Stan Smith', 85)">Add to Cart</button>
-                    </div>
-                    <div class="item" data-category="accessories">
-                        <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=300&h=200&fit=crop" alt="Sneaker Care Kit">
-                        <h3>Premium Care Kit</h3>
-                        <p>Keep your kicks fresh</p>
-                        <div class="price">$25</div>
-                        <button class="add-to-cart" onclick="addToCart('Premium Care Kit', 25)">Add to Cart</button>
-                    </div>
-                    <div class="item" data-category="new brands">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=300&h=200&fit=crop" alt="Chuck Taylor">
-                        <h3>Chuck Taylor All Star</h3>
-                        <p>Classic canvas high-top</p>
-                        <div class="price">$60</div>
-                        <button class="add-to-cart" onclick="addToCart('Chuck Taylor All Star', 60)">Add to Cart</button>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div >
-    <!-- Cart Button -->
-    <div class="cart-btn" onclick="showCart()">
-        🛒 <span id="cart-count">0</span>
-    </div>
-
-    <!-- Auth Modal -->
-    <div id="auth-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="auth-form">
-                <h2>Welcome to Kickstart</h2>
-                <form id="auth-form">
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" class="form-submit">Sign In</button>
-                </form>
-            </div>
+  <button id="dark-mode-toggle" class="dark-mode-btn">🌙 Darkmode</button>
+  <header class="header">
+    <h1 class="logo">Kickstart sneakers</h1>
+    <p>Your ultimate sneaker reseller destination</p>
+    <p>
+      Explore the latest trends, exclusive releases and timeless classics.
+      Discover the perfect pair to elevate your style and step up your sneaker
+      game.
+    </p>
+  </header>
+  <div class="container">
+    <section class="auth-categories-section">
+      <div class="auth-section">
+        <div class="profile-picture">
+          <img
+            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=faces"
+            alt="User Profile"
+          />
         </div>
-    </div>
-   
-    <script src="feature.js"></script>
+        <button class="auth-button" id="auth-btn">Log In | Sign Up</button>
+      </div>
 
+      <nav class="categories">
+        <ul>
+          <li onclick="filterProducts('new')">New Arrivals</li>
+          <li onclick="filterProducts('trending')">Trending</li>
+          <li onclick="filterProducts('brands')">Brands</li>
+          <li onclick="filterProducts('limited')">Limited Editions</li>
+          <li onclick="filterProducts('accessories')">Accessories</li>
+        </ul>
+      </nav>
+    </section>
+    <main class="content">
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search for sneakers..."
+          id="search-input"
+        />
+      </div>
+      <section class="sell-section">
+        <button id="sell-now-btn" class="sell-button">Sell Now</button>
+      </section>
+      <section class="listings-section">
+        <h2>Latest Arrivals</h2>
+        <div class="listings" id="product-listings">
+          <div class="item" data-category="new trending">
+            <img
+              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop"
+              alt="Air Max 90"
+            />
+            <h3>Air Max 90</h3>
+            <p>Classic comfort meets modern style</p>
+            <div class="price">$120</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Air Max 90', 120)"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div class="item" data-category="trending brands">
+            <img
+              src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300&h=200&fit=crop"
+              alt="Jordan 1"
+            />
+            <h3>Jordan 1 Retro</h3>
+            <p>Iconic basketball heritage</p>
+            <div class="price">$170</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Jordan 1 Retro', 170)"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div class="item" data-category="limited new">
+            <img
+              src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=300&h=200&fit=crop"
+              alt="Yeezy Boost"
+            />
+            <h3>Yeezy Boost 350</h3>
+            <p>Limited edition colorway</p>
+            <div class="price">$220</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Yeezy Boost 350', 220)"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div class="item" data-category="brands trending">
+            <img
+              src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=300&h=200&fit=crop"
+              alt="Stan Smith"
+            />
+            <h3>Adidas Stan Smith</h3>
+            <p>Timeless white leather classic</p>
+            <div class="price">$85</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Adidas Stan Smith', 85)"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div class="item" data-category="accessories">
+            <img
+              src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=300&h=200&fit=crop"
+              alt="Sneaker Care Kit"
+            />
+            <h3>Premium Care Kit</h3>
+            <p>Keep your kicks fresh</p>
+            <div class="price">$25</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Premium Care Kit', 25)"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <div class="item" data-category="new brands">
+            <img
+              src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=300&h=200&fit=crop"
+              alt="Chuck Taylor"
+            />
+            <h3>Chuck Taylor All Star</h3>
+            <p>Classic canvas high-top</p>
+            <div class="price">$60</div>
+            <button
+              class="add-to-cart"
+              onclick="addToCart('Chuck Taylor All Star', 60)"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Cart Button -->
+  <div class="cart-btn" onclick="showCart()">🛒 <span id="cart-count">0</span></div>
+
+  <!-- Auth Modal -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="auth-form">
+        <h2>Welcome to Kickstart</h2>
+        <form id="auth-form">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit" class="form-submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sell Modal -->
+  <div id="sell-modal" class="modal">
+    <div class="modal-content">
+      <span id="sell-close" class="close">&times;</span>
+      <h2>Sell Your Item</h2>
+      <form id="sell-form">
+        <label for="item-name">Item Name:</label>
+        <input type="text" id="item-name" name="item-name" required />
+
+        <label for="item-price">Price ($):</label>
+        <input
+          type="number"
+          id="item-price"
+          name="item-price"
+          min="0"
+          step="0.01"
+          required
+        />
+
+        <label for="item-condition">Condition:</label>
+        <select id="item-condition" name="item-condition" required>
+          <option value="" disabled selected>Select condition</option>
+          <option value="New">New - Unworn, original packaging</option>
+          <option value="Like New">Like New - Worn once or twice, flawless</option>
+          <option value="Excellent">Excellent - Minor signs of wear, clean soles</option>
+          <option value="Good">Good - Visible wear but well maintained</option>
+          <option value="Fair">Fair - Noticeable wear, no major damage</option>
+          <option value="Poor">Poor - Heavy wear, scuffs, or defects</option>
+        </select>
+
+        <label for="shoe-size">Shoe Size:</label>
+        <div style="display: flex; gap: 1rem;">
+          <select id="size-us" name="size-us" required>
+            <option value="" disabled selected>US</option>
+            <option value="6">6</option>
+            <option value="6.5">6.5</option>
+            <option value="7">7</option>
+            <option value="7.5">7.5</option>
+            <option value="8">8</option>
+            <option value="8.5">8.5</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+            <option value="11.5">11.5</option>
+            <option value="12">12</option>
+          </select>
+
+          <select id="size-uk" name="size-uk" required>
+            <option value="" disabled selected>UK</option>
+            <option value="5.5">5.5</option>
+            <option value="6">6</option>
+            <option value="6.5">6.5</option>
+            <option value="7">7</option>
+            <option value="7.5">7.5</option>
+            <option value="8">8</option>
+            <option value="8.5">8.5</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+            <option value="10.5">10.5</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <label for="item-photo">Upload Photo:</label>
+        <input
+          type="file"
+          id="item-photo"
+          name="item-photo"
+          accept="image/*"
+          required
+        />
+
+        <div id="photo-preview" style="margin-top: 10px;"></div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="feature.js"></script>
 </body>
 </html>
