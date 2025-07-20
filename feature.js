@@ -212,5 +212,14 @@ Size UK: ${sizeUK}`);
       img.style.transform = 'scale(1)';
     });
   });
+  // Smooth scroll field into view when focused
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('focus', () => {
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 400); // Slightly longer for iOS keyboard delay
+  });
+});
+
 
 });
